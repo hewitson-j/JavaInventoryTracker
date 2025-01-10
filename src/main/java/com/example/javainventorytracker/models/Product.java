@@ -2,7 +2,7 @@ package com.example.javainventorytracker.models;
 
 public class Product {
     private int id;
-    private int counter = 1;
+    private static int counter = 1;
     private String name;
     private int stock;
     private double price;
