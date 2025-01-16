@@ -46,6 +46,18 @@ public class HomeController {
         inventoryTableId.setCellValueFactory(new PropertyValueFactory<>("id"));
         inventoryTableName.setCellValueFactory(new PropertyValueFactory<>("name"));
         inventoryTablePrice.setCellValueFactory(new PropertyValueFactory<>("price"));
+        inventoryTablePrice.setCellFactory(column -> new TableCell<Product, Double>() {
+            @Override
+            protected void updateItem(Double price, boolean empty) {
+                super.updateItem(price, empty);
+                if (empty || price == null) {
+                    setText(null);
+                } else {
+                    // Format the price to always show two decimal places
+                    setText(String.format("%.2f", price));
+                }
+            }
+        });
         inventoryTableStock.setCellValueFactory(new PropertyValueFactory<>("stock"));
 
         inventoryTable.setItems(inventory.getProductList());
