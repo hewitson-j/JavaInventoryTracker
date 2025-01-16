@@ -14,7 +14,7 @@ The Inventory Tracker is a desktop application built using JavaFX that allows us
 - Java
 - JavaFX
 - Scene Builder
-- 
+  
 ## Installation and Setup
 1. Clone the repository:
 `git clone https://github.com/hewitson-j/JavaInventoryTracker`
@@ -49,10 +49,9 @@ The Inventory Tracker is a desktop application built using JavaFX that allows us
 
 5. **Exit Application**:
    - Click the "Exit" button to close the application.
-
 ![Screenshot 2025-01-16 165216](https://github.com/user-attachments/assets/2fc9ad34-a041-4501-9729-6a42d48ff621)
 
 ## Author
 Jacob Hewitson  
-[Portfolio/Contact](https://jacobhewitson.com) | [GitHub](https://github.com/hewitson-j) | [LinkedIn](https://linkedin.com/in/jacobhewitson](https://www.linkedin.com/in/jacob-hewitson-18b93321a/)
+[Portfolio/Contact](https://jacobhewitson.com) | [GitHub](https://github.com/hewitson-j) | [LinkedIn](https://www.linkedin.com/in/jacob-hewitson-18b93321a/)
 
