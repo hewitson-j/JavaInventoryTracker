@@ -88,7 +88,34 @@ public class HomeController {
     }
 
     @FXML
-    private void onDelete(){
+    private void onEditProductButtonClick() throws IOException {
+        // Load the FXML for the new window
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("edit-item-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 800, 650);
+
+        // Get the controller created by the FXMLLoader
+        EditItemViewController controller = fxmlLoader.getController();
+
+        // Set the selectedProduct and inventory on the controller
+        controller.setInventory(inventory);
+        controller.setSelectedProduct(selectedProduct);
+
+        // Create a new stage
+        Stage editItemStage = new Stage();
+        editItemStage.setTitle("Inventory Tracker - Edit Product");
+        editItemStage.setScene(scene);
+
+        // Populate the fields after setting the dependencies
+        controller.populateFields();
+
+        // Show the new stage
+        editItemStage.setOnHiding(event -> inventoryTable.refresh());
+        editItemStage.show();
+    }
+
+
+    @FXML
+    private void onDeleteButtonClick(){
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setHeaderText("Delete Item?");
         alert.setTitle("Delete?");
@@ -108,7 +135,7 @@ public class HomeController {
     }
 
     @FXML
-    private void onExitClick() throws IOException {
+    private void onExitButtonClick() throws IOException {
         Stage stage = (Stage) inventoryText.getScene().getWindow();
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);

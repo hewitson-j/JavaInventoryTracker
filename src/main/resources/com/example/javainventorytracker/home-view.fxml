@@ -37,7 +37,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="editProductButton" mnemonicParsing="false" text="Edit Product">
+                  <Button fx:id="editProductButton" onAction="#onEditProductButtonClick" mnemonicParsing="false" text="Edit Product">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -50,7 +50,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#onDelete" text="Delete Product">
+                  <Button fx:id="deleteButton" mnemonicParsing="false" onAction="#onDeleteButtonClick" text="Delete Product">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -58,7 +58,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#onExitClick" prefHeight="30.0" prefWidth="63.0" text="Exit">
+                  <Button mnemonicParsing="false" onAction="#onExitButtonClick" prefHeight="30.0" prefWidth="63.0" text="Exit">
                      <font>
                         <Font size="14.0" />
                      </font>
