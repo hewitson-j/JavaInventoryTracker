@@ -71,16 +71,20 @@ public class HomeController {
 
     @FXML
     private void onAddProductButtonClick() throws IOException {
-        // Load the Add Item FXML
+        // Load the FXML for the new window
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("add-item-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 900, 725);
+        Scene scene = new Scene(fxmlLoader.load(), 800, 650);
 
-        // Get the current stage (window)
-        Stage stage = (Stage) inventoryText.getScene().getWindow(); // Assuming welcomeText is part of the current scene
+        AddItemViewController controller = fxmlLoader.getController();
+        controller.setInventory(inventory);
 
-        // Set the new scene
-        stage.setScene(scene);
-        stage.setTitle("Inventory Tracker - Home");
+        // Create a new stage
+        Stage addItemStage = new Stage();
+        addItemStage.setTitle("Inventory Tracker - Add");
+        addItemStage.setScene(scene);
+
+        // Show the new stage
+        addItemStage.show();
     }
 
     @FXML
