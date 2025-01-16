@@ -88,6 +88,23 @@ public class HomeController {
     }
 
     @FXML
+    private void onAdjustStockButtonClick() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("adjust-stock-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 300, 400);
+
+        AdjustStockController controller = fxmlLoader.getController();
+        controller.setSelectedProduct(selectedProduct);
+
+        Stage adjustStockStage = new Stage();
+        adjustStockStage.setTitle("Inventory Tracker - Adjust Stock");
+        adjustStockStage.setScene(scene);
+
+        adjustStockStage.setOnHiding(event -> inventoryTable.refresh());
+        adjustStockStage.show();
+    }
+
+
+    @FXML
     private void onEditProductButtonClick() throws IOException {
         // Load the FXML for the new window
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("edit-item-view.fxml"));
@@ -112,7 +129,6 @@ public class HomeController {
         editItemStage.setOnHiding(event -> inventoryTable.refresh());
         editItemStage.show();
     }
-
 
     @FXML
     private void onDeleteButtonClick(){

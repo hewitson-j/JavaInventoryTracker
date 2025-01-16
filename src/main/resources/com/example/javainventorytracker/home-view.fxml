@@ -42,7 +42,7 @@
                         <Font size="14.0" />
                      </font>
                   </Button>
-                  <Button fx:id="adjustStockButton" mnemonicParsing="false" text="Adjust Stock">
+                  <Button fx:id="adjustStockButton" onAction="#onAdjustStockButtonClick" mnemonicParsing="false" text="Adjust Stock">
                      <font>
                         <Font size="14.0" />
                      </font>

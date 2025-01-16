@@ -1,14 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.javainventorytracker.AdjustStockController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javainventorytracker.AdjustStockController">
+   <children>
+      <Label alignment="CENTER" layoutX="47.0" layoutY="27.0" prefHeight="27.0" prefWidth="205.0" text="Adjust Stock">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Spinner fx:id="stockSpinner" editable="true" layoutX="59.0" layoutY="62.0" prefHeight="46.0" prefWidth="181.0" />
+      <HBox alignment="CENTER" layoutX="50.0" layoutY="200.0" prefHeight="46.0" prefWidth="200.0" spacing="20.0">
+         <children>
+            <Button accessibleText="Add" mnemonicParsing="false" onAction="#quickAdd" text="+">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button accessibleText="Remove" mnemonicParsing="false" onAction="#quickRemove" text="-">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="53.0" layoutY="293.0" prefHeight="46.0" prefWidth="200.0" spacing="20.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#onSaveButtonClick" text="Save">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#onCancelButtonClick" text="Cancel">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <Label alignment="CENTER" layoutX="36.0" layoutY="153.0" prefHeight="21.0" prefWidth="228.0" text="Quick Actions">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="66.0" layoutY="181.0" text="(Will automatically save changes)" />
+   </children>
 </AnchorPane>
